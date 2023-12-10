@@ -1,0 +1,9 @@
+addto brands(brand_id $and brand_name) values (10 $and USCBike); # add a new brand with id 10 and name USCBike
+renew products set list_price=199.99 and model_year=2023 where list_price>199.99; # set prices of bicycles to 199.99 if its price is larger than 199.99 in 2023
+remove customers where state!=CA and state!=NY; # delete customers who are not in CA or 
+
+find * in staffs where manager_id=NULL; # find managers because manager doesn't have manager
+find order_id in orders where required_date<shipped_date; # find late delivered orders
+find products.product_name, products.list_price in products, categories where products.category_id=categories.category_id and categories.category_name=Children Bicycles; # find name, price of products whose category is children bicycles
+find store_id, sum(quantity) in stocks cateby store_id; # find the total storage of bicycles in each store
+find product_name, list_price in products where brand_id=2 sortby list_price descend; # find product names and prices with a particular brand sort by price in desendent order
